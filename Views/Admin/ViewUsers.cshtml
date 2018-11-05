@@ -1,0 +1,17 @@
+﻿@model IEnumerable<Nackowskis.ViewModels.UpgradeUserViewModel>
+
+
+
+    <h1>All Users</h1>
+    @foreach (var user in Model)
+    {
+
+    <p>User Id: <a asp-controller="Admin" asp-action="UserUpgrade" asp-route-userId="@user.UserId">@user.UserId</a></p>
+    <p>Username: @user.UserName</p>
+    <p>Role: @user.RoleName</p>
+    <hr />
+    }
+
+
+
+

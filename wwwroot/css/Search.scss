@@ -1,0 +1,48 @@
+﻿.header__search {
+    float: left;
+    line-height: 1;
+    margin-top: 1%;
+    width: 20%;
+
+    .search-form {
+        border: 1px solid lightgray;
+        border-radius: 30px;
+        background-color: #fff;
+        color: lightgray;
+        /* max-width: 150px; */
+        padding: 0.1em 0.9em;
+        overflow: visible;
+
+
+        input[type="search"] {
+            -moz-transition: max-width 0.25s;
+            -o-transition: max-width 0.25s;
+            -webkit-transition: max-width 0.25s;
+            transition: max-width 0.25s;
+            padding: 0;
+            border: none;
+            border-radius: 30px;
+            width: 79%;
+            vertical-align: baseline;
+            max-width: 235px;
+            line-height: 1.4;
+            color: #000;
+        }
+
+        button {
+            font-size: 1.15em;
+            background-color: transparent;
+            padding: 0;
+            color: #918f8e;
+            vertical-align: sub;
+            float: right;
+            position: relative;
+            top: 6px;
+            border: none;
+
+            span {
+                top: -0.2em;
+            }
+        }
+    }
+}

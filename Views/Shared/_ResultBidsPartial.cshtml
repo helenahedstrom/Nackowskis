@@ -1,0 +1,13 @@
+﻿@model Nackowskis.ViewModels.SuccessViewModel
+
+<div id="error-bid">
+    @if (Model.isSuccess)
+    {
+        <p>You've made a bid!</p>
+    }
+    else
+    {
+        <p>Your bid has to be higher than the asking price and/or the highest bid.</p>
+    }
+</div>
+

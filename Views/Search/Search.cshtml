@@ -1,0 +1,32 @@
+﻿@model Nackowskis.ViewModels.SearchViewModel
+
+<div class="search-container">
+    <div class="page-title"><h1>Search Results</h1></div>
+    <table id="search-result" class="display">
+        <thead>
+            <tr>
+                <th>Title</th>
+                <th>Description</th>
+                <th>Starting price $</th>
+                <th>End date</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var auction in Model.ListOfAuctions)
+            {
+                <tr>
+                    <th>
+                        <a asp-controller="Search" asp-action="SearchResult" asp-route-auctionId="@auction.Id" asp-route-price="@auction.StartPrice"
+                           asp-route-title="@auction.Title" asp-route-description="@auction.Description" asp-route-endDate="@auction.EndDate" asp-route-searchterm="@Model.SearchTerm">
+                            @auction.Title
+                        </a>
+                    </th>
+                    <th>@auction.Description</th>
+                    <th>@auction.StartPrice</th>
+                    <th>@auction.EndDate</th>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
+

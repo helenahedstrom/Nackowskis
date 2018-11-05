@@ -1,0 +1,22 @@
+﻿@model Nackowskis.ViewModels.UserViewModel
+
+<div class="register-container">
+    <h1>Register for an account</h1>
+    <form class="registerform" asp-controller="User" asp-action="Register" method="post">
+        @*<span asp-validation-for="Name"></span> <br />
+        <input class="longinput" asp-for="Name" placeholder="Namn" /> <br /> <br />*@
+
+        @*<input class="telephone" asp-for="Telephone" placeholder="Telefonnummer" /> <br /> <br />*@
+        <span asp-validation-for="Email"></span>
+        <input asp-for="Email" placeholder="Email" /> <br />
+
+        @*<span asp-validation-for="UserName"></span>
+        <input class="longinput" asp-for="UserName" placeholder="Användarnamn" />
+        <br />*@
+        <span asp-validation-for="Password"></span>
+        <span asp-validation-for="ConfirmPassword"></span> <br />
+        <input asp-for="Password" type="password" placeholder="Password" /> <br /> <br />
+        <input asp-for="ConfirmPassword" type="password" placeholder="Confirm password" />  <br /> <br />
+        <input type="submit" value="Register" />
+    </form>
+</div>

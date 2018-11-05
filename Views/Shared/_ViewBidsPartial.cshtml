@@ -1,0 +1,29 @@
+﻿@model Nackowskis.ViewModels.BidViewModel
+@using Microsoft.AspNetCore.Identity
+@using Nackowskis.Data;
+@inject SignInManager<ApplicationUser> SignInManager
+@if (Model.ListOfBids.Count < 1)
+{
+    <p>There are no bids on this auction</p>
+
+}
+else
+{
+    foreach (var bid in Model.ListOfBids)
+    {
+        <p>@bid.SumOfBid</p>
+        <p>@bid.BidId</p>
+    }
+
+}
+
+@if (SignInManager.IsSignedIn(User))
+{
+    <h2>Make a bid</h2>
+    <form asp-controller="Home" asp-action="MakeBid" method="post">
+        <input type="number" asp-for="SumOfBid" />
+        <input type="hidden" asp-for="AuctionId" />
+        <input type="submit" value="Make a bid" />
+    </form>
+}
+

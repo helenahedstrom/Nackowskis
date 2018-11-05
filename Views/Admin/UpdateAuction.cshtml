@@ -1,0 +1,26 @@
+﻿@model Nackowskis.Services.Models.Auction
+
+<div id="UpdateAuctionMessage"></div>
+<h1 class="page-title">Update auction</h1>
+<div class="update-auction__container">
+    <form id="" asp-controller="Admin" asp-action="UpdateSelectedAuction"
+          data-ajax="true"
+          data-ajax-method="POST"
+          data-ajax-mode="append"
+          data-ajax-update="#UpdateAuctionMessage">
+        @*<span class="errormessage" asp-validation-for="DishName"></span>*@
+        <label>Title</label>
+        <input id="" asp-for="@Model.Title" value="@Model.Title" placeholder="Enter a title" maxlength="50" /> <br /> <br />
+        <label>Description</label>
+        <input id="" asp-for="@Model.Description" value="@Model.Description" placeholder="Enter a description" maxlength="50" /> <br /> <br />
+        <label>Start date</label>
+        <input type="datetime" id="" asp-for="@Model.StartDate" value="@Model.StartDate" placeholder="Start Date" maxlength="50" /> <br /> <br />
+        <label>End date</label>
+        <input type="datetime" id="" asp-for="@Model.EndDate" value="@Model.EndDate" placeholder="End date" maxlength="50" /> <br /> <br />
+        <label>Asking price</label>
+        <input id="" asp-for="@Model.StartPrice" @*value="@auction.StartPrice" *@ placeholder="Starting price" maxlength="50" /> <br /> <br />
+        <input type="hidden" asp-for="Id" />
+
+        <input type="submit" class="" value="Update" />
+    </form>
+</div>

@@ -1,0 +1,27 @@
+﻿@model Nackowskis.Services.Models.Auction
+<div class="row">
+    <partial name="_SideNavPartial" />
+
+    <div class=" col-sm-9 form-container">
+        <div id="AddMessage"></div>
+        <h1>Add new Auction</h1>
+        <form id="" asp-controller="Admin" asp-action="AddAuction"
+              data-ajax="true"
+              data-ajax-method="POST"
+              data-ajax-mode="append"
+              data-ajax-update="#AddMessage">
+            @*<span class="errormessage" asp-validation-for="DishName"></span>*@
+            <input id="" asp-for="Title" placeholder="Enter a title" maxlength="50" /> <br /> <br />
+            @*<span class="errormessage" asp-validation-for="DishDescription"></span>*@
+            <input id="" asp-for="Description" placeholder="Enter a description" maxlength="50" /> <br /> <br />
+            @*<span class="errormessage" asp-validation-for="Price"></span>*@
+            <input type="datetime-local" id="" asp-for="StartDate" placeholder="Start Date" maxlength="50" /> <br /> <br />
+            <input type="datetime-local" id="" asp-for="EndDate" placeholder="End date" maxlength="50" /> <br /> <br />
+            <input id="" asp-for="StartPrice" placeholder="Starting price" maxlength="50" /> <br /> <br />
+
+
+            <input type="submit" class="" value="Add Auction" />
+        </form>
+    </div>
+</div>
+

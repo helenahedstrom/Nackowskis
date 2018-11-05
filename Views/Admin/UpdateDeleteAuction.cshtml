@@ -1,0 +1,30 @@
+﻿@model List<Nackowskis.Services.Models.Auction>
+
+<div class="row">
+    <partial name="_SideNavPartial" />
+
+    <div class="col-sm-9">
+        <h1 class="page-title">Update or Delete auctions</h1>
+        @if (Model.Count < 1)
+        {
+            <p class="page-title">You have not created any auctions</p>
+        }
+        else
+        {
+            foreach (var auction in Model)
+            {
+                <div class="update-delete__container">
+                    <a asp-area="" asp-controller="Admin" asp-action="UpdateAuction" asp-route-auctionId="@auction.Id">Update @auction.Title</a> or
+
+                    <a asp-area="" asp-controller="Admin" asp-action="DeleteSelectedAuction" asp-route-auctionId="@auction.Id">Delete</a>
+                </div>
+                <hr />
+
+            }
+
+        }
+    </div>
+</div>
+
+
+

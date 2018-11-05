@@ -1,0 +1,33 @@
+﻿.page-title {
+    text-align: center;
+}
+
+/*.Auction-container{
+    float: left; 
+    display: block;
+}*/
+
+.ongoing-auction,
+.make-a-bid {
+    display: inline-block;
+}
+
+.form-container {
+    input, button, select, textarea {
+        width: 13em;
+    }
+}
+
+.update-auction__container {
+    text-align: center;
+
+    label {
+        width: 10%;
+        display: inline-block;
+        text-align: left;
+    }
+}
+
+.register-container {
+    text-align: center;
+}

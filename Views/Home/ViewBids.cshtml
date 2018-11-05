@@ -1,0 +1,72 @@
+﻿@model Nackowskis.ViewModels.BidViewModel
+@using Microsoft.AspNetCore.Identity
+@using Nackowskis.Data;
+@inject SignInManager<ApplicationUser> SignInManager
+@{
+    var highestBid = 0;
+}
+<h1 class="page-title">@Model.AuctionTitle</h1>
+<div class="row">
+    <div class="col-sm-8">
+        <div>
+            <p class="bold-title">@Model.AuctionTitle</p>
+            <p>@Model.AuctionDescription</p>
+            <p>Asking price: @Model.StartPrice</p>
+            <p>End date of this auction is <span class="bold-title">@Model.endDate</span></p>
+        </div>
+        @if (Model.ListOfBids.Count < 1)
+        {
+            <h3>There are no bids on this auction</h3>
+            if (Model.endDate < DateTime.Now)
+            {
+                <h3>This auction is closed</h3>
+
+            }
+
+        }
+        else
+        {
+            if (Model.endDate < DateTime.Now)
+            {
+                <h3>This auction is closed</h3>
+                <p>Highest Bid: @Model.ListOfBids.LastOrDefault().SumOfBid</p>
+            }
+            else
+            {
+                <h3>All Bids</h3>
+                foreach (var bid in Model.ListOfBids)
+                {
+                    <div class="bid-container">
+                        <p>A user has bid @bid.SumOfBid on this auction</p>
+                    </div>
+                    <hr />
+
+                    if (bid.SumOfBid > highestBid)
+                    {
+                        highestBid = bid.SumOfBid;
+                    }
+                }
+            }
+
+
+        }
+    </div>
+
+    @if (SignInManager.IsSignedIn(User) && Model.endDate > DateTime.Now)
+    {
+        <div class="col-sm-4">
+            <h3>Make a bid</h3>
+            <div id="error-bid"></div>
+            <form asp-controller="Home" asp-action="MakeBid" asp-route-highestBid="@highestBid"
+                  data-ajax="true"
+                  data-ajax-method="POST"
+                  data-ajax-mode="append"
+                  data-ajax-update="#error-bid">
+                <input type="number" asp-for="SumOfBid" />
+                <input type="hidden" asp-for="AuctionId" />
+                <input type="hidden" asp-for="StartPrice" />
+                <input type="submit" value="Make a bid" />
+            </form>
+        </div>
+    }
+</div>

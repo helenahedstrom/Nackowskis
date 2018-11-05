@@ -1,0 +1,24 @@
+﻿@model List<Nackowskis.Services.Models.Auction>
+
+<div class="page-title">
+    <h1>Ongoing Auctions</h1>
+    <p>Here you'll find all our ongoing auctions. Have a look and see if you find anything eye-catching!</p>
+</div>
+<div class="ongoing-auctions">
+    @foreach (var item in Model)
+    {
+
+        <div class="ongoing-auction">
+            <h3>
+                <a asp-controller="Home" asp-action="ViewBids" asp-route-auctionId="@item.Id" asp-route-price="@item.StartPrice"
+                   asp-route-title="@item.Title" asp-route-description="@item.Description" asp-route-endDate="@item.EndDate">
+                    @item.Title
+                </a>
+            </h3>
+            <p>Asking Price: @item.StartPrice $</p>
+            <p>@item.Description @item.StartDate - @item.EndDate</p>
+        </div>
+        <div id="make-a-bid"></div>
+        <hr />
+    }
+</div>

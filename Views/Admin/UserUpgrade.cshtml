@@ -1,0 +1,20 @@
+﻿@model Nackowskis.ViewModels.UpgradeUserViewModel
+
+<h1>Handle authentication for user: @Model.UserName</h1>
+<form id="formStandard"
+      asp-controller="Admin"
+      asp-action="UserUpgrade"
+      asp-route-UserId="@Model.UserId"
+      data-ajax="true"
+      data-ajax-method="POST"
+      data-ajax-mode="append"
+      data-ajax-update="#UpdateMessage">
+    <select asp-items="Model.Roles" asp-for="RoleId"></select>
+    <input type="submit" value="Change" />
+</form>
+
+<div id="UpdateMessage"></div>
+
+
+
+

@@ -1,0 +1,112 @@
+﻿.nav-title {
+  margin: 0; }
+
+.navbar-inverse {
+  background-color: #FFFCFC;
+  box-shadow: 0 1px 20px 0 rgba(0, 0, 0, 0.1), 0 1px 4px 0 rgba(0, 0, 0, 0.05); }
+  .navbar-inverse .navbar-brand {
+    color: #5a5a5a; }
+    .navbar-inverse .navbar-brand:hover {
+      color: #f15c44; }
+  .navbar-inverse .navbar-nav li a {
+    color: #5a5a5a;
+    font-weight: 600; }
+    .navbar-inverse .navbar-nav li a:hover {
+      color: #f15c44; }
+
+.hero {
+  background-image: url("../images/hero.png");
+  height: 435px;
+  width: 1520px;
+  background-size: cover;
+  box-shadow: 0 1px 20px 0 rgba(0, 0, 0, 0.1), 0 1px 4px 0 rgba(0, 0, 0, 0.05);
+  margin-bottom: 3.5em; }
+
+.side-nav {
+  float: left;
+  display: block; }
+
+body {
+  font-size: 16px; }
+
+h1 {
+  font-family: 'Baloo Tammudu', cursive;
+  font-size: 1.8em; }
+
+h2,
+h3,
+h4,
+p,
+a {
+  font-family: 'Open Sans', sans-serif; }
+
+h3 {
+  font-size: 1.3em;
+  font-weight: bold; }
+
+.bold-title {
+  font-weight: bold; }
+
+.page-title {
+  text-align: center; }
+
+/*.Auction-container{
+    float: left; 
+    display: block;
+}*/
+.ongoing-auction,
+.make-a-bid {
+  display: inline-block; }
+
+.form-container input, .form-container button, .form-container select, .form-container textarea {
+  width: 13em; }
+
+.update-auction__container {
+  text-align: center; }
+  .update-auction__container label {
+    width: 10%;
+    display: inline-block;
+    text-align: left; }
+
+.register-container {
+  text-align: center; }
+
+.header__search {
+  float: left;
+  line-height: 1;
+  margin-top: 1%;
+  width: 20%; }
+  .header__search .search-form {
+    border: 1px solid lightgray;
+    border-radius: 30px;
+    background-color: #fff;
+    color: lightgray;
+    /* max-width: 150px; */
+    padding: 0.1em 0.9em;
+    overflow: visible; }
+    .header__search .search-form input[type="search"] {
+      -moz-transition: max-width 0.25s;
+      -o-transition: max-width 0.25s;
+      -webkit-transition: max-width 0.25s;
+      transition: max-width 0.25s;
+      padding: 0;
+      border: none;
+      border-radius: 30px;
+      width: 79%;
+      vertical-align: baseline;
+      max-width: 235px;
+      line-height: 1.4;
+      color: #000; }
+    .header__search .search-form button {
+      font-size: 1.15em;
+      background-color: transparent;
+      padding: 0;
+      color: #918f8e;
+      vertical-align: sub;
+      float: right;
+      position: relative;
+      top: 6px;
+      border: none; }
+      .header__search .search-form button span {
+        top: -0.2em; }
+

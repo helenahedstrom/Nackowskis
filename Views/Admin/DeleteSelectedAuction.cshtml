@@ -1,0 +1,12 @@
+﻿@model Nackowskis.ViewModels.SuccessViewModel
+<partial name="_SideNavPartial" />
+<div>
+    @if (Model.isSuccess)
+    {
+    <p>You successfully deleted the auction</p>
+    }
+    else
+    {
+    <p>You were not able to delete the auction. Did you make sure there weren't bids on the auction?</p>
+    }
+</div>

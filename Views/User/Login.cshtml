@@ -1,0 +1,14 @@
+﻿@model Nackowskis.ViewModels.LoginViewModel
+@{
+    ViewData["Title"] = "Login";
+}
+
+<h1>Logga in</h1>
+<div id="loginFail" asp-validation-summary="All"></div>
+
+<form asp-controller="User" asp-action="Login" method="post">
+    <input id="addUserName" asp-for="UserName" placeholder="Fyll i användarnamn" />
+    <input type="password" id="addPassword" asp-for="Password" placeholder="Fyll i lösenord" />
+    <input type="submit" value="Logga in" />
+</form>
+
